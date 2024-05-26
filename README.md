@@ -1,38 +1,52 @@
-# create-svelte
+# Open Soap Calculator
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Goals
 
-## Creating a project
+An open source application that can be ported, used and added anywhere for free by anyone. 
 
-If you're seeing this, you've probably already done this step. Congrats!
+This application is meant to be used to calculate soap qualities and characteristic as well as lye usage needed per soap formulation
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Information Banks
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Lye Types
+- NaOH (Sodium Hydroxide): Produces hard, solid soap.
+- KOH (Potassium Hydroxide): Produces soft, liquid, or gel-like soap.
 
-## Developing
+### Water
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Water can be calculated in three different ways:
 
-```bash
-npm run dev
+#### 1. Water as % of Oils
+This method calculates water based on a percentage of the total weight of oils used in the soap recipe.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+**Formula**:
 
-## Building
+![Water Percentage Formula](static/WaterPercentage.png "Water Percentage Formula")
+Water = (Total Weight of Oils) x (Water Percentage)
 
-To create a production version of your app:
+**Common Percentages**:
+- Typically ranges from 25% to 38%
+- A common default is 38%
 
-```bash
-npm run build
-```
+#### 2. Lye Concentration
+This method focuses on the concentration of lye in the total water and lye solution.
 
-You can preview the production build with `npm run preview`.
+**Formula**:
+![Lye Concentration Formula](static/LyeConcentrationFormula.png "Lye Concentration Formula")
+Lye Concentration = { [Weight of Lye]/([Weight of Lye] + [Weight of Water]) } x 100% 
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+**Common Concentrations**:
+- Typically ranges from 25% to 50%
+- A common starting point is 33%
+
+### 3. Water : Lye Ratio
+This method uses a simple ratio to determine the amount of water relative to the amount of lye.
+
+**Formula**:
+![Water Lye Ratio Formula](static/WaterLieRatioFormula.png "Water Lye Ratio Formula")
+Water = (Weight of Lye) x (Water : Lye Ratio)
+
+**Common Ratios**:
+- Typically ranges from 1:1 to 3:1
+- A common starting point is 2:1
+
